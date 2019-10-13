@@ -1,4 +1,4 @@
-#This project has been depricated in favour of [TyaPowerStats](https://github.com/codeclinic/tuyapowerstats) which expands on this project, making it easier to setup and use. It is also now available via PyPi and is able to automatically install all dependencies and automatically report all stats via MQTT.
+# This project has been depricated in favour of [TyaPowerStats](https://github.com/codeclinic/tuyapowerstats) which expands on this project, making it easier to setup and use. It is also now available via PyPi and is able to automatically install all dependencies and automatically report all stats via MQTT.
 
 
 
