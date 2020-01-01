@@ -1,14 +1,16 @@
 # PowerMonitor (Tuya Power Stats)
 Monitor power usage through WiFi Smart Plug
 
-This script will will poll [Tuya](https://en.tuya.com/) campatible Smart Plugs for state (on/off), current (mA), voltage (V), and power (wattage).  
+This script will poll [Tuya](https://en.tuya.com/) / SmartLife / Jinvoo campatible Smart Plugs for state (on/off), current (mA), voltage (V), and power (wattage) and then reports these values via MQTT 
 
-This project is based on the python pytuya library to poll [Tuya](https://en.tuya.com/) campatible Smart Plugs for state and power data that can be used for point in time monitoring or stored for trending.  There are two scripts here. The `powerplug.py` script responds with a human redable output of state (on/off), current (mA), voltage (V), and power (W).  The `powerjson.py` script responds with JSON containing the same but adds a timestamp for convient time series processing.
+This project is based on the python pytuya library to poll [Tuya](https://en.tuya.com/) campatible Smart Plugs for state and power data that can be used for point in time monitoring or stored for trending. The `powerjson.py` script responds with JSON containing the same but adds a timestamp for convient time series processing.
 
-REQUIRED: IP address and Device ID of  smart plug.
+
+
+REQUIRED: IP address and Device ID of mart plug.
 
 ## Preparation
-1. Download the Smart Life - Smart Living app for iPhone or Android. Pair with your smart plug (this is important as you cannot monitor a plug that has not been paired).  
+1. Download the Tuya / Smartlife / Jinvoo app for iPhone or Android. Pair with your smart plug (this is important as you cannot monitor a plug that has not been paired).  
 	* https://itunes.apple.com/us/app/smart-life-smart-living/id1115101477?mt=8
 	* https://play.google.com/store/apps/details?id=com.tuya.smartlife&hl=en
 2. Device ID - Inside the app, select the plug you wish to monitor, select the 3 dots(Jinvoo) or the edit/pencil icon(Tuya & SmartLife) in the top right and then "Device Info".  The page should display "Device ID" which the script will use to poll the plug. It's also worth noting the MAC address of the device as it can come in handy in step 3.
@@ -46,6 +48,7 @@ The script does not need docker but it does require the pycrypto python library.
 ```
  sudo apt-get install python-crypto python-pip		
  pip install pycrypto
+ pip install paho-mqtt
  pip install Crypto		# some systems will need this
  pip install pyaes		# some systems will need this
 ```
